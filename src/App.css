@@ -59,3 +59,9 @@
   padding: 1rem;
   color: white;
 }
+.jumbotron {
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  background: #e9ecef;
+  border-radius: .5rem;
+}

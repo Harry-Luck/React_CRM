@@ -1,5 +1,5 @@
 import React from 'react'
-import { Dashbord } from '../pages/Dashbord/dashbord'
+// import { Dashbord } from '../pages/Dashbord/dashbord'
 import { Footer } from './patrials/Footer'
 import { Header } from './patrials/Header'
 
@@ -10,7 +10,7 @@ export const Defaultlayout = ({children})=>{
         </div>
         
         <div className='main'>
-            <Dashbord></Dashbord>
+            {children}
         </div>
         
         <div className='footer'>
