@@ -1,5 +1,6 @@
 import React from 'react'
 import { Table } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 export const TicketTable = ({tickets}) =>{
     return(
        <Table className='striped bordered hover'>
@@ -16,7 +17,8 @@ export const TicketTable = ({tickets}) =>{
                 tickets.map((row) => (
                     <tr key={row.id}>
                         <td>{row.id}</td>
-                        <td>{row.subjects}</td>
+                        <Link to={`/ticket/${row.id}`}>
+                        <td>{row.subjects}</td></Link>
                         <td>{row.status}</td>
                         <td>{row.addedAt}</td>
                     </tr>

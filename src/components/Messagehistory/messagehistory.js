@@ -1,20 +1,21 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
+import './messagehistory.css';
 export const Messagehistory = ({msg}) =>{
     if(!msg) return null;
-    console.log(msg);
+    // console.log(msg);
     return msg.map((row, i )=>(
-        <div key={i} className='message-history'>
-            <div className='send'>
+        <div key={i} className='message-history mt-3'>
+            <div className='send font-wight-bold text-second'>
                 <div className='sender'>
-                    {msg.messageby}
+                    {row.messageby}
                 </div>
                 <div className='date'>
-                    {msg.message}
+                    {row.date}
                 </div>
             </div>
             <div className='message'>
-                {msg.date}
+                {row.message}
             </div>
         </div>
     ));

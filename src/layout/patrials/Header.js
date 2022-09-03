@@ -1,7 +1,10 @@
 import React from 'react'
 import {Navbar, Nav, NavbarBrand} from 'react-bootstrap'
 import logo from '../../assets/img/logo.png'
+import { useNavigate } from "react-router-dom";
+import { LinkContainer } from 'react-router-bootstrap'
 export const Header=()=>{
+    const navigate = useNavigate();
     return(<div>
         <Navbar
         bg='info'
@@ -12,9 +15,13 @@ export const Header=()=>{
             <Navbar.Toggle aria-controls='basic-navbar-nav' />
             <Navbar.Collapse id = 'basic-navbar-nav'>
                 <Nav className='ml-auto'>
-                    <Nav.Link href='/dashboard'>dashboard</Nav.Link>
-                    <Nav.Link href='/ticket'>Ticket</Nav.Link>
-                    <Nav.Link href='/logout'>Logout</Nav.Link>
+                    <LinkContainer to="/dashboard">
+                        <Nav.Link>dashboard</Nav.Link>
+                    </LinkContainer>
+                    <LinkContainer to="/tickets">
+                    <Nav.Link>Ticket</Nav.Link>
+                    </LinkContainer>
+                    <Nav.Link onClick={()=>navigate('/')}>Logout</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

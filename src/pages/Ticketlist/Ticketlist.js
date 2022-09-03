@@ -4,6 +4,7 @@ import { PageBreadcrumb } from '../../components/breadcrumb/Breadcrumb'
 import { Searchform } from '../../components/search-form/searchform'
 import { TicketTable } from '../../components/ticket_table/ticket_table'
 import tickets from '../../assets/data/dummy_ticket.json'
+import { Link } from 'react-router-dom'
 export const Ticketlist = () =>{
     const [str, setstr] =useState("")
     const [disticket, setdisticket] = useState(tickets)
@@ -18,7 +19,7 @@ export const Ticketlist = () =>{
         const displaytickets = tickets.filter((row)=>
         row.subjects.toLowerCase().includes(sttr.toLowerCase())
         );
-        
+
         setdisticket(displaytickets)
     }
     return(
@@ -30,7 +31,9 @@ export const Ticketlist = () =>{
            </Row>
            <Row>
                 <Col>
-                    <Button varient='info'>TicketList</Button>
+                    <Link to='/addtickets'>
+                        <Button varient='info'>TicketList</Button>
+                    </Link>
                 </Col>
                 <Col className='text-right'>
                     <Searchform handleOnChange = {handleOnChange} str ={str} />
